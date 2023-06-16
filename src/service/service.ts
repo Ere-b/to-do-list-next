@@ -1,12 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const uri: string = process.env.MONGODB_KEY;
-// const dbName = "kyma-storage-1";
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
+const uri: string = process.env.MONGODB_URI || "";
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
