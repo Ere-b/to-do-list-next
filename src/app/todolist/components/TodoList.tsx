@@ -8,14 +8,14 @@ interface TodoListProps {
 
 const TodoList = ({ items, onDeleteTodo, onDoneTodo }: TodoListProps) => {
   return (
-    <div className="flex-col">
-      <div>
+    <div className="flex flex-col">
+      <div className="h-3/6">
         <h1 className="text-lg">Todo</h1>
         <ul>
           {items.map((todo) => {
             if (todo.done === false) {
               return (
-                <li key={todo.id}>
+                <li key={todo.id} className="h-9">
                   <span>{todo.text}</span>
                   <button className="p-1" onClick={() => onDoneTodo(todo.id)}>
                     완료
@@ -32,13 +32,13 @@ const TodoList = ({ items, onDeleteTodo, onDoneTodo }: TodoListProps) => {
           })}
         </ul>
       </div>
-      <div>
+      <div className="h-3/6">
         <h1 className="text-lg">Complete</h1>
         <ul>
           {items.map((todo) => {
             if (todo.done === true) {
               return (
-                <li key={todo.id}>
+                <li key={todo.id} className="h-9">
                   <span>{todo.text}</span>
                   <button className="p-1" onClick={() => onDoneTodo(todo.id)}>
                     미완료

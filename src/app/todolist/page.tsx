@@ -30,14 +30,14 @@ const TodoListPage = () => {
     });
   };
 
-  const data = await fetch("/api/todos");
-  console.log(data);
-
   return (
-    <div className="p-8">
-      <NewTodo onAddTodo={todoAddHandler} />
-      <TodoList items={todos} onDeleteTodo={todoDeleteHandler} onDoneTodo={todoDoneHandler} />
-    </div>
+    <main className="h-screen flex">
+      <div className="max-w-full mx-auto w-full rounded-lg shadow-lg p-6">
+        <h1 className="text-2xl h-10 font-bold mb-4">Todo List</h1>
+        <NewTodo onAddTodo={todoAddHandler} />
+        <TodoList items={todos} onDeleteTodo={todoDeleteHandler} onDoneTodo={todoDoneHandler} />
+      </div>
+    </main>
   );
 };
 

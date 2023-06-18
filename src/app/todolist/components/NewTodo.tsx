@@ -15,16 +15,22 @@ const NewTodo = ({ onAddTodo }: NewTodoProps) => {
   };
 
   return (
-    <form className="flex justify-center" onSubmit={todoSubmitHandler}>
-      <div>
-        <label htmlFor="todo-text" className="p-1">
-          What to do:{" "}
-        </label>
-        <input className="p-1 text-black" type="text" id="todo-text" ref={textInputRef} />
-        <button className="p-1" type="submit">
-          추가
-        </button>
-      </div>
+    <form className="flex flex-row gap-1" onSubmit={todoSubmitHandler}>
+      <label htmlFor="todo-text" className="p-1">
+        What to do:
+      </label>
+      <input
+        className="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1"
+        type="text"
+        id="todo-text"
+        ref={textInputRef}
+      />
+      <button
+        className="px-4 py-2 font-semibold text-sm bg-black text-white rounded border-hidden shadow-sm"
+        type="submit"
+      >
+        추가
+      </button>
     </form>
   );
 };
